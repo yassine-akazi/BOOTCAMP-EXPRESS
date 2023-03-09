@@ -101,6 +101,13 @@ app.post("/login" ,function (req,res)  {
     }) 
 });  
 
+// logout
+app.post("/logout" , function (req,res) {
+    res.cookie("accessToken", undefined) 
+    res.redirect('/login')
+    
+})
+
 // Starting server
 app.listen('4000' , function(){
     console.log('http://localhost:4000');
